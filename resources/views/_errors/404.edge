@@ -1,0 +1,22 @@
+@layout('_layouts/default')
+
+@section('content')
+  <div class="container">
+    <div class="card border-danger mt-5">
+      <div class="card-body">
+        <div class="card-text text-center">
+          <h1 class="h3 mb-0">Terjadi Kesalahan</h1>
+          <span>Halaman yang Anda tuju, tidak tersedia.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+@endsection
+
+@section('script')
+<script>
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+})
+</script>
+@endsection

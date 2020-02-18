@@ -1,0 +1,58 @@
+@layout('_layouts/dashboard')
+
+@section('content')
+  <div class="d-sm-flex align-items-center mb-4">
+    <a href="#" class="mr-3" onclick="window.history.back()"><i class="fa fa-arrow-left"></i></a>
+    <strong class="d-inline">{{ user.email }}</strong>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6 card m-1">
+      <div class="card-body">
+        <div class="card-title row">
+          <div class="col">
+            <h5 class="d-inline">Profil</h5>
+          </div>
+          <div class="col text-right">
+            <a href="#" class="btn btn-sm btn-success" data-toggle="tooltip" title="Edit">
+              <i class="fa fa-edit"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card-text">
+          <table class="table table-striped table-hover">
+            <tbody>
+              <tr>
+                <td>Nama</td>
+                <td>: {{ user.fullname }}</td>
+              </tr>
+              <tr>
+                <td>Nomor HP</td>
+                <td>: +62 {{ user.hp }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col card m-1">
+      <div class="card-body">
+        <div class="card-title row">
+          <div class="col">
+            <h5 class="card-title">Program Yang Dikuti</h5>
+          </div>
+          <div class="col text-right">
+            <a href="#" class="btn btn-sm btn-primary" data-toggle="tooltip" title="Detail">
+              <i class="fa fa-eye"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="alert alert-warning text-center">
+          Tidak pernah mengikuti program apapun
+        </div>
+      </div>
+    </div>
+  </div>
+
+@endsection

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <script src="/js/fontawesome.js"></script>
+  @!section('style')
+
+  <title>Vontrip {{ title ? ' - ' + title : '' }}</title>
+</head>
+<body class="sb-nav-fixed">
+  @include('_partials/dashboard/navbar')
+  
+  <div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        @include('_partials/dashboard/sidenav')
+    </div>
+    <div id="layoutSidenav_content" style="margin-top: 2.5%">
+        <main>
+            <div class="container-fluid">
+              @!section('content')
+            </div>
+        </main>
+        <footer class="mt-auto bg-dark">
+            <div class="container-fluid">
+                <div class="d-flex align-items-center justify-content-between small">
+                    @include('_partials/footer')
+                </div>
+            </div>
+        </footer>
+    </div>
+  </div>
+
+  <script src="/js/jquery.slim.min.js"></script>
+  <script src="/js/popper.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script src="/js/site.js"></script>
+
+  @!section('script')
+</body>
+</html>

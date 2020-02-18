@@ -1,0 +1,50 @@
+@layout('_layouts/default')
+
+@section('content')
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3 card">
+      <div class="card-body">
+  
+        <h3 class="text-center">Masuk ke Vontrip</h3>
+  
+        @if(getErrorFor('fail'))
+          <div class="alert alert-danger">
+            {{ getErrorFor('fail') }}
+          </div>
+        @endif
+  
+        <form action="{{ route('loginsend') }}" method="post">
+          {{ csrfField() }}
+  
+          <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" name="email" class="form-control" value="{{ old('email') }}"/>
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input type="password" name="password" class="form-control"/>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <button type="submit" class="btn btn-primary">Masuk</button>
+            </div>
+            <div class="col text-right">
+              <a href="{{ route('lupakatasandi') }}">Lupa password?</a>
+            </div>
+          </div>
+        </form>
+  
+        <div class="text-center">
+          <span>Belum punya akun?</span>
+          <br/>
+          <a href="{{ route('daftar') }}">Daftar di sini!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endsection

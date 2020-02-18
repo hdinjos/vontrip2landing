@@ -1,0 +1,52 @@
+@layout('_layouts/default')
+
+@section('content')
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3 card">
+      <div class="card-body">
+  
+        <h3 class="text-center">Mendaftar ke Vontrip</h3>
+  
+        <form action="{{ route('registersend') }}" method="post">
+          {{ csrfField() }}
+
+          <label for="">Nama Lengkap</label>
+          <div class="input-group mb-3">
+            <input type="text" name="fullname" class="form-control" value="{{ old('fullname') }}"/>
+          </div>
+  
+          <label for="">Email</label>
+          <div class="input-group mb-3">
+            <input type="text" name="email" class="form-control" value="{{ old('email') }}"/>
+          </div>
+  
+          <label for="">Nomor HP</label>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">+62</span>
+            </div>        
+            <input type="text" name="hp" class="form-control" placeholder="82xxx" value="{{ old('hp') }}">
+          </div>
+  
+          <label for="">Password</label>
+          <div class="input-group mb-3">
+            <input type="password" name="password" class="form-control"/>
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Daftar</button>
+        </form>
+  
+        <div class="text-center">
+          <span>Sudah mendaftar?</span>
+          <br/>
+          <a href="{{ route('masuk') }}">Silakan login!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@endsection
